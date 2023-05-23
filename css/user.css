@@ -1,0 +1,58 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.contenedor {
+  text-align: center;
+  margin-top: 100px;
+}
+.consulta {
+  position: absolute;
+  right: 0;
+  border: none;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #004a92;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+}
+.retiro {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  border: none;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #004a92;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+}
+.deposito {
+  position: absolute;
+  left: 0;
+  border: none;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #004a92;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+}
+input {
+  padding: 20px 40px;
+}
+#mensaje {
+  margin: auto;
+  border: none;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: #004a92;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 200px;
+}

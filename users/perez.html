@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cajero Automático</title>
+    <link rel="stylesheet" href="../css/user.css">
+
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenido">
+            <h2>Bienvenido Perez</h2>
+            <p>¿Que desea Realizar?</p>
+            <button class="consulta" onclick="consultarSaldo()">Consultar Saldo</button>
+            <button class="retiro" onclick="retirarMonto()">Retirar Monto</button>
+            <button class="deposito" onclick="depositarMonto()">Depositar Monto</button>
+            <p id="mensaje"></p>
+            <input type="number" id="montoInput" placeholder="Ingrese el monto" style="margin-top: 10px;">
+        </div>
+    </div>
+
+    <script>
+        var saldo = 4000;
+
+        function consultarSaldo() {
+            mostrarMensaje("Tu saldo actual es: $" + saldo);
+        }
+
+        function retirarMonto() {
+            var montoInput = document.getElementById("montoInput");
+            var monto = parseInt(montoInput.value);
+            montoInput.value = "";
+
+            if (monto && monto > 0 && monto <= saldo) {
+                saldo -= monto;
+                mostrarMensaje("Has retirado: $" + monto);
+                actualizarSaldo();
+            } else {
+                mostrarMensaje("Monto inválido o saldo insuficiente");
+            }
+        }
+
+        function depositarMonto() {
+            var montoInput = document.getElementById("montoInput");
+            var monto = parseInt(montoInput.value);
+            montoInput.value = "";
+
+            if (monto && monto > 0) {
+                saldo += monto;
+                mostrarMensaje("Has depositado: $" + monto);
+                actualizarSaldo();
+            } else {
+                mostrarMensaje("Monto inválido");
+            }
+        }
+
+        function mostrarMensaje(mensaje) {
+            var mensajeElemento = document.getElementById("mensaje");
+            mensajeElemento.textContent = mensaje;
+        }
+
+        function actualizarSaldo() {
+            var saldoElemento = document.createElement("p");
+            saldoElemento.textContent = "Saldo actual: $" + saldo;
+            document.querySelector(".contenido").appendChild(saldoElemento);
+        }
+    </script>
+</body>
+</html>
